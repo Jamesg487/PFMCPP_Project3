@@ -70,10 +70,10 @@ Thing 1) Electric Guitar
 Thing 2) Computer
 5 properties:
     1) screen size
-    2) model
+    2) usb port type
     3) ram size
-    4) graphics card
-    5) processor
+    4) screen resolution
+    5) cpu
 3 things it can do:
     1) display using screen
     2) output audio 
@@ -97,11 +97,11 @@ Thing 3) Bicycle
 /*
 Thing 4) Coffee Machine
 5 properties:
-    1) portafilter
-    2) steam wand
-    3) bean grinder
-    4) water reservoir
-    5) drip tray
+    1) portafilter size 
+    2) water pressure
+    3) hopper capacity
+    4) water reservoir capacity
+    5) grind coarseness
 3 things it can do:
     1) extract coffee
     2) froth milk
