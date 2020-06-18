@@ -53,59 +53,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) Electric Guitar
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) pickups
+    2) number of strings
+    3) body material
+    4) body style
+    5) fret size
 3 things it can do:
-    1)
-    2)
-    3)
+    1) output audio
+    2) adjust tone
+    3) adjust volume
  */
 
 /*
-Thing 2)
+Thing 2) Computer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) screen size
+    2) model
+    3) ram size
+    4) graphics card
+    5) processor
 3 things it can do:
-    1)
-    2)
-    3)
+    1) display using screen
+    2) output audio 
+    3) connect to internet
  */
 
 /*
-Thing 3)
+Thing 3) Bicycle
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) wheel size
+    2) frame size
+    3) number of gears
+    4) handlebar type
+    5) tyres
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change gear
+    2) steer
+    3) move
  */
 
 /*
-Thing 4)
+Thing 4) Coffee Machine
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) portafilter
+    2) steam wand
+    3) bean grinder
+    4) water reservoir
+    5) drip tray
 3 things it can do:
-    1)
-    2)
-    3)
+    1) extract coffee
+    2) froth milk
+    3) grind beans
  */
 
 
