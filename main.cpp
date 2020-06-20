@@ -108,17 +108,17 @@ Thing 4) Coffee Machine
  */
 
 /*
-Thing 10)
+Thing 10) Multi-effects Pedal
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) control knobs
+    2) footswitches
+    3) preamp
+    4) expression pedal
+    5) display
 3 things it can do:
-    1)
-    2)
-    3)
+    1) loop audio
+    2) modulate audio
+    3) delay audio
  */
 
 /*
