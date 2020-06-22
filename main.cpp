@@ -129,79 +129,79 @@ Thing 4) Coffee Machine
  */
 
 /*
-Thing 5)
+Thing 5) Distortion Section
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) distortian type
+    2) drive
+    3) tone
+    4) level
+    5) distortion footswitch
 3 things it can do:
-    1)
-    2)
-    3)
+    1) distort audio
+    2) adjust volume
+    3) adjust brigthness
  */
 
 /*
-Thing 6)
+Thing 6) Delay Section
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) delay type
+    2) delay time
+    3) feedback amount
+    4) delay level
+    5) delay footswitch
 3 things it can do:
-    1)
-    2)
-    3)
+    1) add delayed audio signal
+    2) recieve tap information
+    3) adjust volume
  */
 
 /*
-Thing 7)
+Thing 7) Preamp
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) cab type
+    2) gain level
+    3) treble value
+    4) bass value
+    5) bypass switch
 3 things it can do:
-    1)
-    2)
-    3)
+    1) attenuate frequencies 
+    2) add overdrive
+    3) adjust volume
  */
 
 /*
-Thing 8)
+Thing 8) Modulation Section
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) modulation type
+    2) rate amount
+    3) depth amount
+    4) modulation level
+    5) modulation footswitch 
 3 things it can do:
-    1)
-    2)
-    3)
+    1) add harmonic frequencies
+    2) add dynamic modultaion
+    3) output phased audio
  */
 
 /*
-Thing 9)
+Thing 9) Display
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) height
+    2) width
+    3) digit size
+    4) brightness
+    5) number of LEDs
 3 things it can do:
-    1)
-    2)
-    3)
+    1) monitor battery level
+    2) display variables 
+    3) display tuning information
  */
 
 /*
 Thing 10) Multi-effects Pedal
 5 properties:
-    1) comp/fx section
+    1) distortion section
     2) delay section
     3) preamp 
     4) modulation section
