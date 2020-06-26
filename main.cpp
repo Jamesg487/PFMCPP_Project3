@@ -121,32 +121,74 @@ Thing 1) Electric Guitar
     2) number of strings
     3) body material
     4) body style
-    5) fret size
+    5) fret size in inches
 3 things it can do:
     1) output audio
     2) adjust tone
     3) adjust volume
  */
 
+ struct ElectricGuitar
+ {
+     //pickups 
+     std::string pickups = "Humbucker";
+     //number of stings
+     int numOfStrings = 6;
+     //body material 
+     std::string bodyMaterial= "Ash";
+     //body style
+     char bodyStyle = 'T';
+     //fret size in inches
+     float fretSize = 0.81f;
+
+     //output audio
+     void outputAudio (bool isJackConnected);
+     //adjust tone
+     int adjustTone (bool isVolumeKnob, int startKnobPosition, int endKnobPosition);
+     //adjust volume
+     int adjustVolume (bool isVolumeKnob, int startKnobPosition, int endKnobPosition); 
+ };
+
 /*
 Thing 2) Computer
 5 properties:
-    1) screen size
+    1) screen size in inches
     2) usb port type
-    3) ram size
+    3) ram size in GB
     4) screen resolution
-    5) cpu
+    5) cpu in GHz
 3 things it can do:
     1) display using screen
     2) output audio 
     3) connect to internet
  */
 
+ struct Computer
+ {
+     //screen size in inches
+     float screenSize = 13.3f;
+     //usb port type
+     char usbPortType = 'C';
+     //ram size in GB
+     int ramSize = 16;
+     //screen resolution
+     std::string screenRes = "1440×1080";
+     //cpu in Ghz
+     float cpu = 2.3f;
+     
+     //display using screen
+     void displayWithScreen (bool isComputerOn);
+     //output audio
+     void outputAudio (bool isAudioPlaying);
+     //connect to internet
+     void connectToInternet (bool isRouterOn, std::string wifiPassword);
+ };
+
 /*
 Thing 3) Bicycle
 5 properties:
-    1) wheel size
-    2) frame size
+    1) wheel size in inches
+    2) frame size in cm
     3) number of gears
     4) handlebar type
     5) tyres
@@ -156,13 +198,33 @@ Thing 3) Bicycle
     3) move
  */
 
+struct Bicycle
+{
+  //wheels size in inches
+  float wheeleSize = 27.5f;
+  //frame size in cm
+  int frameSize = 58;
+  // number of gears
+  int numOfGears = 21;
+  //handlebar type
+  std::string handlebarType = "DropDown";
+  //tyres
+  std::string tyres = "Road";
+
+  //change gear
+  void changeGear (int currentGear, int desiredGear);
+  //steer
+  bool steer (bool isObstacle, bool isDestinationDirection);
+  //move
+  bool move (bool onBike); 
+};
 /*
 Thing 4) Coffee Machine
 5 properties:
-    1) portafilter size 
-    2) water pressure
-    3) hopper capacity
-    4) water reservoir capacity
+    1) portafilter size in mm 
+    2) water pressure in bar
+    3) hopper capacity in kg
+    4) water reservoir capacity in ltr
     5) grind coarseness
 3 things it can do:
     1) extract coffee
@@ -170,12 +232,32 @@ Thing 4) Coffee Machine
     3) grind beans
  */
 
+struct CoffeeMachine
+{
+    //portafilter size in mm
+    int portafilterSize = 58;
+    //water pressure in bar
+    int waterPressure = 9;
+    //hopper capacity in kg
+    float hopperCapacity = 1.2f;
+    //water reservoir capacity in ltr 
+    double waterReservoirCapacity = 1.4;
+    //grind coarseness
+    std::string grindCoarseness = "Fine";
+
+    //extract coffee
+    void extractCoffee (bool isPortafilterFull, bool optimumWaterTemp);
+    //froth milk
+    void frothMilk (bool cappuccino, std::string milkType);
+    //grind beans
+    void grindBeans (std::string grindCoarseness);
+};
 /*
 Thing 5) Distortion Section
 5 properties:
-    1) distortian type
-    2) drive
-    3) tone
+    1) distortion type
+    2) drive amount
+    3) tone 
     4) level
     5) distortion footswitch
 3 things it can do:
@@ -184,11 +266,31 @@ Thing 5) Distortion Section
     3) adjust brigthness
  */
 
+struct DistortionSection
+{
+    //distortian type
+    std::string distType = "Fuzz";
+    //drive amount
+    int driveAmount = 65;
+    //tone
+    int distTone = 40;
+    //level
+    int distLevel = 80;
+    //distortion footswitch
+    bool distFootswitchOn = true;
+
+    //distort audio
+    void distortAudio (int driveAmount, int distLevel, bool distFootswitchOn);
+    //adjust volume
+    int adjustVolume (int distLevel);
+    //adjust brightness 
+    int adjustBrightness (int distTone);
+};
 /*
 Thing 6) Delay Section
 5 properties:
     1) delay type
-    2) delay time
+    2) delay time in ms
     3) feedback amount
     4) delay level
     5) delay footswitch
@@ -198,6 +300,26 @@ Thing 6) Delay Section
     3) adjust volume
  */
 
+struct DelaySection
+{
+    //delay type
+    std::string delayType = "Short";
+    //delay time in ms
+    int delayTime = 110;
+    //feedback amount
+    int feedbackAmount = 42;
+    //delay level
+    int delayLevel = 30;
+    //delay footswitch
+    bool delayFootswitchOn = false;
+
+    //add delayed audio signal
+    void delayAudio (int delayTime, int feedbackAmount, bool delayFootswitchOn);
+    //recieve tap information
+    int tapTempo (bool delayFootswitchOn,int deltaTapTime);
+    //adjust volume
+    int adjustVolume (int delayLevel);
+};
 /*
 Thing 7) Preamp
 5 properties:
@@ -212,6 +334,26 @@ Thing 7) Preamp
     3) adjust volume
  */
 
+struct Preamp
+{
+    //cab type
+    std::string cabType = "VintageClean";
+    //gain level
+    int preampGain = 4;
+    //treble value
+    int preampTreble = 8;
+    //bass value
+    int preampBass = 5;
+    //bypass switch
+    bool isPreampBypassOn = false;
+
+    //attenuate frequencies
+    void outputEq (int preampTreble,int preampBass);
+    //add overdrive
+    void overdrive (int preampGain);
+    //adjust volume
+    int preampTotalVolume (int preampGain,int preampVolume); 
+};
 /*
 Thing 8) Modulation Section
 5 properties:
@@ -226,19 +368,82 @@ Thing 8) Modulation Section
     3) output phased audio
  */
 
+struct ModulationSection 
+{
+    //modulation type
+    std::string modType = "Chorus";
+    //rate amount
+    int modRate = 15;
+    //depth amount
+    int modDepth = 34;
+    //modulation level
+    int modLevel = 73;
+    //modulation footswitch
+    bool modFootswitchOn = true;
+
+    struct Harmoniser
+    {
+        //harmoniser key
+        char harmKey = 'F';
+        //pitch coarse
+        int coarsePitch = -7;
+        //pitch fine
+        int finePitch = 55;
+        //harmoniser mix
+        int harmMix = 62;
+        //harmoniser mode
+        std::string harmMode = "Major";
+
+        //add harmomics
+        void harmonise (int coarsePitch = -7, int finePitch = 55);
+        //blend harmonics 
+        void harmBlend (int harmMix = 62);
+        //utilise scales
+        void harmScale (char harmKey = 'F', std::string harmMode = "Major"); 
+
+    };
+
+    //add harmonic frequencies
+    void harmFreq (Harmoniser harmParmeters, bool modFootswitchOn);
+    //add dynamic modultaion
+    void modDynamic (bool isTremoloOn,int modRate,int modDepth);
+    //output phased audio
+    void modPhasor (bool isPhasorOn,int modRate,int modDepth);
+};
 /*
 Thing 9) Display
 5 properties:
-    1) height
-    2) width
-    3) digit size
-    4) brightness
+    1) height in cm 
+    2) width in cm
+    3) digit size in inches
+    4) brightness in ucd
     5) number of LEDs
 3 things it can do:
     1) monitor battery level
     2) display variables 
     3) display tuning information
  */
+
+ struct Display
+ {
+     //height in cm
+     float displayHeight = 2.4f;
+     //width in cm
+     float displayWidth = 3.65f;
+     //digit size in inches
+     double digitSize = 0.56;
+     //brightness in ucd
+     int displayBrightness = 12000;
+     //number of LEDs
+     int numLEDs = 16;
+
+     //monitor battery level
+     int batteryLevel (int getBatteryLevel);
+     //display variables
+     void displayParameter (bool hasKnobMoved, int knobValue);
+     //display tuning information
+     void displayTuning (char getAudioPitch, bool isSharp, bool isFlat);
+};
 
 /*
 Thing 10) Multi-effects Pedal
@@ -253,6 +458,47 @@ Thing 10) Multi-effects Pedal
     2) modulate audio
     3) delay audio
  */
+
+ struct MultiEffectsPedal
+ {
+    //distortion section
+    DistortionSection distParamValues();
+    //delay section
+    DelaySection delayParamValues();
+    //preamp
+    Preamp preampValues();
+    //modulation section
+    ModulationSection modParamValues();
+    //display
+    Display displayStatus();
+
+    struct Looper
+    {
+       //looper engaged
+       bool isLooperEngaged = true;
+       //dub footswitch
+       bool dubTrack = true;
+       //track one level
+       int trackOneLevel = 6;
+       //dub track level
+       int dubTrackLevel = 4;
+       //tap tempo in ms
+       int deltaTapTime = 441;
+
+       //blend looper tracks
+       void looperMix (int trackOneLevel = 6, int dubTrackLevel = 4);
+       //quantize audio
+       void quantizeAudio (int bpm = 136, int deltaTapTime = 441);
+       //overwrite loop
+       void newLoop (bool isLooperEngaged = true);
+       };
+    //loop audio
+    Looper loopParamValues();
+    //modulate audio
+    void audioModulation (ModulationSection modParamValues());
+    //delay audio
+    void audioDelay (DelaySection delayParamValues());
+ };
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
