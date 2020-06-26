@@ -218,6 +218,7 @@ bool steer (bool isObstacle, bool isDestinationDirection);
 //move
 bool move (bool onBike); 
 };
+
 /*
 Thing 4) Coffee Machine
 5 properties:
@@ -234,24 +235,25 @@ Thing 4) Coffee Machine
 
 struct CoffeeMachine
 {
-    //portafilter size in mm
-    int portafilterSize = 58;
-    //water pressure in bar
-    int waterPressure = 9;
-    //hopper capacity in kg
-    float hopperCapacity = 1.2f;
-    //water reservoir capacity in ltr 
-    double waterReservoirCapacity = 1.4;
-    //grind coarseness
-    std::string grindCoarseness = "Fine";
+//portafilter size in mm
+int portafilterSize = 58;
+//water pressure in bar
+int waterPressure = 9;
+//hopper capacity in kg
+float hopperCapacity = 1.2f;
+//water reservoir capacity in ltr 
+double waterReservoirCapacity = 1.4;
+//grind coarseness
+std::string grindCoarseness = "Fine";
 
-    //extract coffee
-    void extractCoffee (bool isPortafilterFull, bool optimumWaterTemp);
-    //froth milk
-    void frothMilk (bool cappuccino, std::string milkType);
-    //grind beans
-    void grindBeans (std::string grindCoarseness);
+//extract coffee
+void extractCoffee (bool isPortafilterFull, bool optimumWaterTemp);
+//froth milk
+void frothMilk (bool cappuccino, std::string milkType);
+//grind beans
+void grindBeans (std::string grindCoarseness);
 };
+
 /*
 Thing 5) Distortion Section
 5 properties:
@@ -268,24 +270,25 @@ Thing 5) Distortion Section
 
 struct DistortionSection
 {
-    //distortian type
-    std::string distType = "Fuzz";
-    //drive amount
-    int driveAmount = 65;
-    //tone
-    int distTone = 40;
-    //level
-    int distLevel = 80;
-    //distortion footswitch
-    bool distFootswitchOn = true;
+//distortian type
+std::string distType = "Fuzz";
+//drive amount
+int driveAmount = 65;
+//tone
+int distTone = 40;
+//level
+int distLevel = 80;
+//distortion footswitch
+bool distFootswitchOn = true;
 
-    //distort audio
-    void distortAudio (int driveAmount, int distLevel, bool distFootswitchOn);
-    //adjust volume
-    int adjustVolume (int distLevel);
-    //adjust brightness 
-    int adjustBrightness (int distTone);
+//distort audio
+void distortAudio (int driveAmount, int distLevel, bool distFootswitchOn);
+//adjust volume
+int adjustVolume (int distLevel);
+//adjust brightness 
+int adjustBrightness (int distTone);
 };
+
 /*
 Thing 6) Delay Section
 5 properties:
@@ -302,24 +305,25 @@ Thing 6) Delay Section
 
 struct DelaySection
 {
-    //delay type
-    std::string delayType = "Short";
-    //delay time in ms
-    int delayTime = 110;
-    //feedback amount
-    int feedbackAmount = 42;
-    //delay level
-    int delayLevel = 30;
-    //delay footswitch
-    bool delayFootswitchOn = false;
+//delay type
+std::string delayType = "Short";
+//delay time in ms
+int delayTime = 110;
+//feedback amount
+int feedbackAmount = 42;
+//delay level
+int delayLevel = 30;
+//delay footswitch
+bool delayFootswitchOn = false;
 
-    //add delayed audio signal
-    void delayAudio (int delayTime, int feedbackAmount, bool delayFootswitchOn);
-    //recieve tap information
-    int tapTempo (bool delayFootswitchOn,int deltaTapTime);
-    //adjust volume
-    int adjustVolume (int delayLevel);
+//add delayed audio signal
+void delayAudio (int delayTime, int feedbackAmount, bool delayFootswitchOn);
+//recieve tap information
+int tapTempo (bool delayFootswitchOn,int deltaTapTime);
+//adjust volume
+int adjustVolume (int delayLevel);
 };
+
 /*
 Thing 7) Preamp
 5 properties:
@@ -336,24 +340,25 @@ Thing 7) Preamp
 
 struct Preamp
 {
-    //cab type
-    std::string cabType = "VintageClean";
-    //gain level
-    int preampGain = 4;
-    //treble value
-    int preampTreble = 8;
-    //bass value
-    int preampBass = 5;
-    //bypass switch
-    bool isPreampBypassOn = false;
+//cab type
+std::string cabType = "VintageClean";
+//gain level
+int preampGain = 4;
+//treble value
+int preampTreble = 8;
+//bass value
+int preampBass = 5;
+//bypass switch
+bool isPreampBypassOn = false;
 
-    //attenuate frequencies
-    void outputEq (int preampTreble,int preampBass);
-    //add overdrive
-    void overdrive (int preampGain);
-    //adjust volume
-    int preampTotalVolume (int preampGain,int preampVolume); 
+//attenuate frequencies
+void outputEq (int preampTreble,int preampBass);
+//add overdrive
+void overdrive (int preampGain);
+//adjust volume
+int preampTotalVolume (int preampGain,int preampVolume); 
 };
+
 /*
 Thing 8) Modulation Section
 5 properties:
@@ -370,46 +375,45 @@ Thing 8) Modulation Section
 
 struct ModulationSection 
 {
-    //modulation type
-    std::string modType = "Chorus";
-    //rate amount
-    int modRate = 15;
-    //depth amount
-    int modDepth = 34;
-    //modulation level
-    int modLevel = 73;
-    //modulation footswitch
-    bool modFootswitchOn = true;
+//modulation type
+std::string modType = "Chorus";
+//rate amount
+int modRate = 15;
+//depth amount
+int modDepth = 34;
+//modulation level
+int modLevel = 73;
+//modulation footswitch
+bool modFootswitchOn = true;
 
-    struct Harmoniser
-    {
-        //harmoniser key
-        char harmKey = 'F';
-        //pitch coarse
-        int coarsePitch = -7;
-        //pitch fine
-        int finePitch = 55;
-        //harmoniser mix
-        int harmMix = 62;
-        //harmoniser mode
-        std::string harmMode = "Major";
+struct Harmoniser
+{
+//harmoniser key
+char harmKey = 'F';
+//pitch coarse
+int coarsePitch = -7;
+//pitch fine
+int finePitch = 55;
+//harmoniser mix
+int harmMix = 62;
+//harmoniser mode
+std::string harmMode = "Major";
 
-        //add harmomics
-        void harmonise (int coarsePitch = -7, int finePitch = 55);
-        //blend harmonics 
-        void harmBlend (int harmMix = 62);
-        //utilise scales
-        void harmScale (char harmKey = 'F', std::string harmMode = "Major"); 
-
-    };
-
-    //add harmonic frequencies
-    void harmFreq (Harmoniser harmParmeters, bool modFootswitchOn);
-    //add dynamic modultaion
-    void modDynamic (bool isTremoloOn,int modRate,int modDepth);
-    //output phased audio
-    void modPhasor (bool isPhasorOn,int modRate,int modDepth);
+//add harmomics
+void harmonise (int coarsePitch = -7, int finePitch = 55);
+//blend harmonics 
+void harmBlend (int harmMix = 62);
+//utilise scales
+void harmScale (char harmKey = 'F', std::string harmMode = "Major"); 
 };
+//add harmonic frequencies
+void harmFreq (Harmoniser harmParmeters, bool modFootswitchOn);
+//add dynamic modultaion
+void modDynamic (bool isTremoloOn,int modRate,int modDepth);
+//output phased audio
+void modPhasor (bool isPhasorOn,int modRate,int modDepth);
+};
+
 /*
 Thing 9) Display
 5 properties:
