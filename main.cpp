@@ -128,26 +128,26 @@ Thing 1) Electric Guitar
     3) adjust volume
  */
 
- struct ElectricGuitar
- {
-     //pickups 
-     std::string pickups = "Humbucker";
-     //number of stings
-     int numOfStrings = 6;
-     //body material 
-     std::string bodyMaterial= "Ash";
-     //body style
-     char bodyStyle = 'T';
-     //fret size in inches
-     float fretSize = 0.81f;
+struct ElectricGuitar
+{
+//pickups 
+std::string pickups = "Humbucker";
+//number of stings
+int numOfStrings = 6;
+//body material 
+std::string bodyMaterial= "Ash";
+//body style
+char bodyStyle = 'T';
+//fret size in inches
+float fretSize = 0.81f;
 
-     //output audio
-     void outputAudio (bool isJackConnected);
-     //adjust tone
-     int adjustTone (bool isVolumeKnob, int startKnobPosition, int endKnobPosition);
-     //adjust volume
-     int adjustVolume (bool isVolumeKnob, int startKnobPosition, int endKnobPosition); 
- };
+//output audio
+void outputAudio (bool isJackConnected);
+//adjust tone
+int adjustTone (bool isVolumeKnob, int startKnobPosition, int endKnobPosition);
+//adjust volume
+int adjustVolume (bool isVolumeKnob, int startKnobPosition, int endKnobPosition); 
+};
 
 /*
 Thing 2) Computer
@@ -163,26 +163,26 @@ Thing 2) Computer
     3) connect to internet
  */
 
- struct Computer
- {
-     //screen size in inches
-     float screenSize = 13.3f;
-     //usb port type
-     char usbPortType = 'C';
-     //ram size in GB
-     int ramSize = 16;
-     //screen resolution
-     std::string screenRes = "1440×1080";
-     //cpu in Ghz
-     float cpu = 2.3f;
-     
-     //display using screen
-     void displayWithScreen (bool isComputerOn);
-     //output audio
-     void outputAudio (bool isAudioPlaying);
-     //connect to internet
-     void connectToInternet (bool isRouterOn, std::string wifiPassword);
- };
+struct Computer
+{
+//screen size in inches
+float screenSize = 13.3f;
+//usb port type
+char usbPortType = 'C';
+//ram size in GB
+int ramSize = 16;
+//screen resolution
+std::string screenRes = "1440×1080";
+//cpu in Ghz
+float cpu = 2.3f;
+
+//display using screen
+void displayWithScreen (bool isComputerOn);
+//output audio
+void outputAudio (bool isAudioPlaying);
+//connect to internet
+void connectToInternet (bool isRouterOn, std::string wifiPassword);
+};
 
 /*
 Thing 3) Bicycle
@@ -200,23 +200,23 @@ Thing 3) Bicycle
 
 struct Bicycle
 {
-  //wheels size in inches
-  float wheeleSize = 27.5f;
-  //frame size in cm
-  int frameSize = 58;
-  // number of gears
-  int numOfGears = 21;
-  //handlebar type
-  std::string handlebarType = "DropDown";
-  //tyres
-  std::string tyres = "Road";
+//wheels size in inches
+float wheeleSize = 27.5f;
+//frame size in cm
+int frameSize = 58;
+// number of gears
+int numOfGears = 21;
+//handlebar type
+std::string handlebarType = "DropDown";
+//tyres
+std::string tyres = "Road";
 
-  //change gear
-  void changeGear (int currentGear, int desiredGear);
-  //steer
-  bool steer (bool isObstacle, bool isDestinationDirection);
-  //move
-  bool move (bool onBike); 
+//change gear
+void changeGear (int currentGear, int desiredGear);
+//steer
+bool steer (bool isObstacle, bool isDestinationDirection);
+//move
+bool move (bool onBike); 
 };
 /*
 Thing 4) Coffee Machine
@@ -424,25 +424,25 @@ Thing 9) Display
     3) display tuning information
  */
 
- struct Display
- {
-     //height in cm
-     float displayHeight = 2.4f;
-     //width in cm
-     float displayWidth = 3.65f;
-     //digit size in inches
-     double digitSize = 0.56;
-     //brightness in ucd
-     int displayBrightness = 12000;
-     //number of LEDs
-     int numLEDs = 16;
+struct Display
+{
+//height in cm
+float displayHeight = 2.4f;
+//width in cm
+float displayWidth = 3.65f;
+//digit size in inches
+double digitSize = 0.56;
+//brightness in ucd
+int displayBrightness = 12000;
+//number of LEDs
+int numLEDs = 16;
 
-     //monitor battery level
-     int batteryLevel (int getBatteryLevel);
-     //display variables
-     void displayParameter (bool hasKnobMoved, int knobValue);
-     //display tuning information
-     void displayTuning (char getAudioPitch, bool isSharp, bool isFlat);
+//monitor battery level
+int batteryLevel (int getBatteryLevel);
+//display variables
+void displayParameter (bool hasKnobMoved, int knobValue);
+//display tuning information
+void displayTuning (char getAudioPitch, bool isSharp, bool isFlat);
 };
 
 /*
@@ -459,46 +459,46 @@ Thing 10) Multi-effects Pedal
     3) delay audio
  */
 
- struct MultiEffectsPedal
- {
-    //distortion section
-    DistortionSection distParamValues();
-    //delay section
-    DelaySection delayParamValues();
-    //preamp
-    Preamp preampValues();
-    //modulation section
-    ModulationSection modParamValues();
-    //display
-    Display displayStatus();
+struct MultiEffectsPedal
+{
+//distortion section
+DistortionSection distParamValues();
+//delay section
+DelaySection delayParamValues();
+//preamp
+Preamp preampValues();
+//modulation section
+ModulationSection modParamValues();
+//display
+Display displayStatus();
 
-    struct Looper
-    {
-       //looper engaged
-       bool isLooperEngaged = true;
-       //dub footswitch
-       bool dubTrack = true;
-       //track one level
-       int trackOneLevel = 6;
-       //dub track level
-       int dubTrackLevel = 4;
-       //tap tempo in ms
-       int deltaTapTime = 441;
+struct Looper
+{
+//looper engaged
+bool isLooperEngaged = true;
+//dub footswitch
+bool dubTrack = true;
+//track one level
+int trackOneLevel = 6;
+//dub track level
+int dubTrackLevel = 4;
+//tap tempo in ms
+int deltaTapTime = 441;
 
-       //blend looper tracks
-       void looperMix (int trackOneLevel = 6, int dubTrackLevel = 4);
-       //quantize audio
-       void quantizeAudio (int bpm = 136, int deltaTapTime = 441);
-       //overwrite loop
-       void newLoop (bool isLooperEngaged = true);
-       };
-    //loop audio
-    Looper loopParamValues();
-    //modulate audio
-    void audioModulation (ModulationSection modParamValues());
-    //delay audio
-    void audioDelay (DelaySection delayParamValues());
- };
+//blend looper tracks
+void looperMix (int trackOneLevel = 6, int dubTrackLevel = 4);
+//quantize audio
+void quantizeAudio (int bpm = 136, int deltaTapTime = 441);
+//overwrite loop
+void newLoop (bool isLooperEngaged = true);
+};
+//loop audio
+Looper loopParamValues();
+//modulate audio
+void audioModulation (ModulationSection modParamValues());
+//delay audio
+void audioDelay (DelaySection delayParamValues());
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
