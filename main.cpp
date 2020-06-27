@@ -128,7 +128,6 @@ Thing 1) Electric Guitar
  */
 
 struct ElectricGuitar
-
 {
     //pickups 
     std::string pickups = "Humbucker";
@@ -144,9 +143,9 @@ struct ElectricGuitar
     //output audio
     void outputAudio (bool isJackConnected);
     //adjust tone
-    int adjustTone (bool isVolumeKnob, int startKnobPosition, int endKnobPosition);
+    void adjustTone (bool isVolumeKnob, int startKnobPosition, int endKnobPosition);
     //adjust volume
-    int adjustVolume (bool isVolumeKnob, int startKnobPosition, int endKnobPosition); 
+    void adjustVolume (bool isVolumeKnob, int startKnobPosition, int endKnobPosition); 
 };
 
 /*
@@ -164,7 +163,6 @@ Thing 2) Computer
  */
 
 struct Computer
-
 {
     //screen size in inches
     float screenSize = 13.3f;
@@ -200,7 +198,6 @@ Thing 3) Bicycle
  */
 
 struct Bicycle
-
 {
     //wheels size in inches
     float wheeleSize = 27.5f;
@@ -236,7 +233,6 @@ Thing 4) Coffee Machine
  */
 
 struct CoffeeMachine
-
 {
     //portafilter size in mm
     int portafilterSize = 58;
@@ -272,7 +268,6 @@ Thing 5) Distortion Section
  */
 
 struct DistortionSection
-
 {
     //distortian type
     std::string distType = "Fuzz";
@@ -308,7 +303,6 @@ Thing 6) Delay Section
  */
 
 struct DelaySection
-
 {
     //delay type
     std::string delayType = "Short";
@@ -324,7 +318,7 @@ struct DelaySection
     //add delayed audio signal
     void delayAudio (int delayTime, int feedbackAmount, bool delayFootswitchOn);
     //recieve tap information
-    int tapTempo (bool delayFootswitchOn,int deltaTapTime);
+    int tapTempo (bool delayFootswitchOn, int deltaTapTime);
     //adjust volume
     int adjustVolume (int delayLevel);
 };
@@ -344,7 +338,6 @@ Thing 7) Preamp
  */
 
 struct Preamp
-
 {
     //cab type
     std::string cabType = "VintageClean";
@@ -358,11 +351,11 @@ struct Preamp
     bool isPreampBypassOn = false;
 
     //attenuate frequencies
-    void outputEq (int preampTreble,int preampBass);
+    void outputEq (int preampTreble, int preampBass);
     //add overdrive
     void overdrive (int preampGain);
     //adjust volume
-    int preampTotalVolume (int preampGain,int preampVolume); 
+    int preampTotalVolume (int preampGain, int preampVolume); 
 };
 
 /*
@@ -380,7 +373,6 @@ Thing 8) Modulation Section
  */
 
 struct ModulationSection 
-
 {
     //modulation type
     std::string modType = "Chorus";
@@ -394,7 +386,6 @@ struct ModulationSection
     bool modFootswitchOn = true;
 
     struct Harmoniser
-
     {
         //harmoniser key
         char harmKey = 'F';
@@ -418,9 +409,9 @@ struct ModulationSection
     //add harmonic frequencies
     void harmFreq (Harmoniser harmParmeters, bool modFootswitchOn);
     //add dynamic modultaion
-    void modDynamic (bool isTremoloOn,int modRate,int modDepth);
+    void modDynamic (bool isTremoloOn, int modRate, int modDepth);
     //output phased audio
-    void modPhasor (bool isPhasorOn,int modRate,int modDepth);
+    void modPhasor (bool isPhasorOn, int modRate, int modDepth);
 };
 
 /*
@@ -438,7 +429,6 @@ Thing 9) Display
  */
 
 struct Display
-
 {
     //height in cm
     float displayHeight = 2.4f;
@@ -474,7 +464,6 @@ Thing 10) Multi-effects Pedal
  */
 
 struct MultiEffectsPedal
-
 {
     //distortion section
     DistortionSection distParamValues();
@@ -488,7 +477,6 @@ struct MultiEffectsPedal
     Display displayStatus();
 
     struct Looper
-
     {
         //looper engaged
         bool isLooperEngaged = true;
